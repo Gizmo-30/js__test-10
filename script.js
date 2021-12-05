@@ -9,25 +9,36 @@ do {
 do {
     var b = +prompt('Введите максимальное число')
 } while (isNaN(b));
-    
-function random() {
-    let fan = Math.floor(Math.random() * (max + 1 - min) + min)
-    return fan;
+   
+function radomExam(min, max) {
+    return Math.floor(Math.random() * (max - min) + min)
 }
 
-function random2(b, c) {
-    let fan = Math.floor(Math.random() * (c + 1 - b) + b)
-    return fan;
+function randomSym() {
+    return Math.floor(Math.random() * (5 - 1) + 1)
 }
 
-for (let i = 1; i <= x; i++) {
-    let c = random(a, b)
-    let d = random(a, b)
-    let y = +prompt(c + ' + ' + d + ' = ' + ' ? ')
-    console.log(c + ' + ' + d + ' = ' + (c + d) + ' ( ваш ответ ' + y + ' )')
-    if (y == (c + d)) {
-        alert('Ваш ответ верный')
-    } else {
-        alert('Ваш ответ не верный')
+for (let i = 0; i < a; i++) {
+    let examNum1 = radomExam(b, c);
+    let examNum2 = radomExam(b, c);
+    let examSym = randomSym();
+    let exam = 0
+
+    if (examSym == 1) {
+        exam = examNum1 + examNum2;
+        examSym = '+'
+    } else if (examSym == 2) {
+        exam = examNum1 - examNum2;
+        examSym = '-'
+    } else if (examSym == 3) {
+        exam = examNum1 * examNum2;
+        examSym = '*'
+    } else if (examSym == 4) {
+        exam = examNum1 / examNum2;
+        examSym = '/'
     }
+
+    let answer = +prompt(examNum1 + examSym + examNum2)
+    console.log(exam == answer ? ' ваш ответ верный - ' + answer : ' Ваш ответ не верный -' + answer + ' ! ' + ' верный ответ ' + exam)
 }
+

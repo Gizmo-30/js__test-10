@@ -18,9 +18,9 @@ function randomSym() {
     return Math.floor(Math.random() * (5 - 1) + 1)
 }
 
-for (let i = 0; i < a; i++) {
-    let examNum1 = radomExam(b, c);
-    let examNum2 = radomExam(b, c);
+for (let i = 0; i < x; i++) {
+    let examNum1 = radomExam(a, b);
+    let examNum2 = radomExam(a, b);
     let examSym = randomSym();
     let exam = 0
 
